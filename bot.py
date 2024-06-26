@@ -17,6 +17,17 @@ async def cmd_start(message: types.Message):
 	await message.answer("Hello!")
 
 
+#Хэндлер на test1
+@dp.message(Command("answer"))
+async def cmd_test1(massage: types.Message):
+	await massage.answer("Простой ответ")
+
+#Хэндлер на test1
+@dp.message(Command("reply"))
+async def cmd_test2(massage:types.Message):
+	await massage.reply("Ответ с ответом")
+
+
 #Запуск процесса пулинга
 async def main():
 	await dp.start_polling(bot)
